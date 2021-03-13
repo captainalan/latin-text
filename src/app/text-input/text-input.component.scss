@@ -1,0 +1,27 @@
+#info-box {
+    background-color: #eee;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin-bottom: 2rem;
+}
+#info-label {
+    font-weight: bold;
+}
+
+#output-box {
+    border: {
+        style: solid;
+        width: 1px;
+    }
+    font: {
+        size: 150%;
+    }
+    min-height: 5rem;
+    margin: {
+        top: 0.2rem;
+        bottom: 1rem;
+    }
+    padding: {
+        top: 1.5rem;
+        left: 1rem;
+    }
+}

@@ -1,23 +1,32 @@
-<h1>Unified Latin Input Text Tool</h1>
-<p>
-  Type funny squiggles (diacritics) with ease from your browser!
-</p>
-
-<div>
-  <h2>Mode</h2>
-  <p>
-    Select which keymap you would like to use.
-  </p>
-  <ul>
-    <li>Latin</li>
-    <li>Pinyin</li>
-  </ul>
-</div>
-
-<app-text-input [(textInput)]="textInput"></app-text-input>
-<div>{{ textInput }}</div>
-
-<h2>About</h2>
-<p>
-  Originally I designed this tool to aid me in typing Latin with long vowels marked and Chinese <i>pinyin</i>.
-</p>
+<main class="container">
+  <section class="row">
+    <div class="col-12">
+        <h1>Unified Latin Input Text Tool</h1>
+        <p>
+          Type funny squiggles (diacritics) with ease from your browser!
+        </p>
+        
+    </div>
+  </section>
+  <section class="row">
+    <div class="col-md-3">
+      <h2>Mode</h2>
+      <p>
+        Select which keymap you would like to use.
+      </p>
+      <ul>
+        <li>Latin</li>
+        <li>Pinyin</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <app-text-input></app-text-input>
+    </div>
+    <div class="col-md-3">
+      <h2>About</h2>
+      <p>
+        Originally I designed this tool to aid me in typing Latin with long vowels marked and Chinese <i>pinyin</i>.
+      </p>
+    </div>
+  </section>
+</main>

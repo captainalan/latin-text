@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { latinMode } from './modes/latin';
 
 @Component({
   selector: 'app-text-input',
@@ -7,27 +8,28 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class TextInputComponent implements OnInit {
 
-  @Input() size: number | string;
-  @Output() sizeChange = new EventEmitter<number>();
-
   @Input() textInput: string;
+  @Input() transformedText: string;
   @Output() textInputChange = new EventEmitter<string>();
 
-  dec() { this.resize(-1); }
-  inc() { this.resize(+1); }
-
-  resize(delta: number) {
-    this.size = Math.min(40, Math.max(8, +this.size + delta));
-    this.sizeChange.emit(this.size);
-  }
+  // TODO dynamically change mode
+  transformer = latinMode().transformer;
+  info = latinMode().info;
 
   transformed = "";
+
   onKey(event: any) {
     this.textInput = event.target.value;
 
     // Apply transformation here
-    this.transformed = event.target.value + "!!!!"; // add excitement!
+    this.transformed = this.transformer(event.target.value); // add excitement!
 
+    this.textInputChange.emit(this.transformed);
+  }
+
+  onClear() {
+    this.textInput = "";
+    this.transformed = "";
     this.textInputChange.emit(this.transformed);
   }
 

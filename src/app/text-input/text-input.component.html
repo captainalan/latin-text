@@ -1,5 +1,16 @@
-<div>
-    <p>Type input string:</p>
-    <input (keyup)="onKey($event)">
-    <p>(Display output here)</p>
-  </div>
+<section>
+    <label for="text-input">Type input string: </label>
+    <div class="input-group mb-3">
+        <input (keyup)="onKey($event)" value="{{textInput}}">
+        <div class="input-group-append">
+            <button (click)=onClear() class="btn btn-primary" type="button">Clear</button>
+        </div>
+    </div>
+    <div id="info-box">
+        <span id="info-label">Info:</span> {{info}}
+    </div>
+    <label for="output-box">Transformed text: </label>
+    <div id="output-box">
+        {{transformed}}
+    </div>
+</section>

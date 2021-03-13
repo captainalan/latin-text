@@ -8,6 +8,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class AppComponent {
   title = 'latin-input';
 
-  textInput = ""; // String that will get transformed
+  transformedText = ""; // Text to copy/paste
 
 }
