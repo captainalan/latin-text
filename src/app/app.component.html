@@ -14,18 +14,26 @@
       <p>
         Select which keymap you would like to use.
       </p>
-        <input type="radio" id="latin" name="keymap" value="latin" checked>
+        <input type="radio" id="latin" name="keymap" value="latin" (change)="changeMode($event)" checked>
         <label for="latin">Latin</label><br>
-        <input type="radio" id="pinyin" name="keymap" value="pinyin" disabled>
+        <input type="radio" id="pinyin" name="keymap" value="pinyin" (change)="changeMode($event)" disabled>
         <label for="latin">Pīnyīn</label><br>
+        <input type="radio" id="echo" name="keymap" value="echo" (change)="changeMode($event)">
+        <label for="test">Echo (Diagnostic) </label><br>
     </div>
     <div class="col-md-6">
-      <app-text-input></app-text-input>
+      <app-text-input
+        [mode]="textInputMode"
+      >
+      </app-text-input>
     </div>
     <div class="col-md-3">
       <h2>About</h2>
       <p>
         Originally I designed this tool to aid me in typing Latin with long vowels marked and Chinese <i>pinyin</i>.
+      </p>
+      <p>
+        Written using Angular with styling in Bootstrap.
       </p>
     </div>
   </section>

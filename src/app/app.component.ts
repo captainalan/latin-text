@@ -9,5 +9,10 @@ export class AppComponent {
   title = 'latin-input';
 
   transformedText = ""; // Text to copy/paste
+  textInputMode = "";
+
+  changeMode(e) {
+    this.textInputMode = e.target.value;
+  }
 
 }

@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Features to add
 
-- [ ] Select input mode
+- [x] Select input mode
 - [ ] Add appropriate lang-attribute on copy-pastable text
 - [ ] Add copy button
 
