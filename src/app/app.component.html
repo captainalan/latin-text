@@ -1,6 +1,6 @@
 <main class="container">
   <section class="row">
-    <div class="col-12">
+    <div class="col-12 pt-3 mb-4">
         <h1>Unified Latin Input Text Tool</h1>
         <p>
           Type funny squiggles (diacritics) with ease from your browser!
@@ -16,8 +16,8 @@
       </p>
         <input type="radio" id="latin" name="keymap" value="latin" (change)="changeMode($event)" checked>
         <label for="latin">Latin</label><br>
-        <input type="radio" id="pinyin" name="keymap" value="pinyin" (change)="changeMode($event)" disabled>
-        <label for="latin">Pīnyīn</label><br>
+        <input type="radio" id="pinyin" name="keymap" value="pinyin" (change)="changeMode($event)">
+        <label for="latin">Pīnyīn</label> <span style="color:red"> (Not working yet)</span><br>
         <input type="radio" id="echo" name="keymap" value="echo" (change)="changeMode($event)">
         <label for="test">Echo (Diagnostic) </label><br>
     </div>

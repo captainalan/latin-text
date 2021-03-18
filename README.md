@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
 
+See the [deployed version on Github Pages](https://captainalan.github.io/latin-text/).
+
 ## Features to add
 
 - [x] Select input mode

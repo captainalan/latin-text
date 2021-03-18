@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 import { latinMode } from './modes/latin';
+import { pinyinMode } from './modes/pinyin';
 
 @Component({
   selector: 'app-text-input',
@@ -17,6 +17,7 @@ export class TextInputComponent implements OnInit {
   // New modes can be added by name here
   modes = {
     latin: latinMode,
+    pinyin: pinyinMode,
     echo: function() {
       return {
         transformer: (s: string) => s, // Just returns same thing back
