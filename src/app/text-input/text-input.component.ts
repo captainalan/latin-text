@@ -1,4 +1,6 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+
 import { latinMode } from './modes/latin';
 import { pinyinMode } from './modes/pinyin';
 
@@ -13,6 +15,14 @@ export class TextInputComponent implements OnInit {
   @Input() transformedText: string;
   @Input() mode: string; // e.g. latin, pinyin
   @Output() textInputChange = new EventEmitter<string>();
+
+  constructor( @Inject(DOCUMENT) private document: Document ) { }
+
+  ngOnInit(): void {
+    // Latin mode set as default
+    this.transformer = latinMode().transformer;
+    this.info = latinMode().info;
+  }
 
   // New modes can be added by name here
   modes = {
@@ -55,11 +65,13 @@ export class TextInputComponent implements OnInit {
     this.textInputChange.emit(this.transformed);
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.transformer = latinMode().transformer;
-    this.info = latinMode().info;
+  onCopy() {
+    const el = this.document.getElementById('output-box');
+    el.setAttribute('contenteditable', 'true');
+    el.focus();
+    this.document.execCommand('selectAll');
+    this.document.execCommand('copy');
+    el.setAttribute('contenteditable', 'false');
+    el.blur();
   }
-
 }

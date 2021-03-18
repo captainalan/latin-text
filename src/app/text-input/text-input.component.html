@@ -3,14 +3,13 @@
     <div class="input-group mb-3">
         <input (keyup)="onKey($event)" value="{{textInput}}">
         <div class="input-group-append">
-            <button (click)=onClear() class="btn btn-primary" type="button">Clear</button>
+            <button (click)=onClear() class="btn btn-secondary" type="button">Clear</button>
         </div>
     </div>
     <div id="info-box">
         <span id="info-label">Info:</span> {{info}}
     </div>
     <label for="output-box">Transformed text: </label>
-    <div id="output-box">
-        {{transformed}}
-    </div>
+    <div id="output-box">{{transformed}}</div>
+    <button class="btn btn-primary" (click)="onCopy()">Copy</button>
 </section>
